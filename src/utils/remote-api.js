@@ -14,6 +14,7 @@ const urlSeriesList = `${urlSearch}/series`;
 const urlOperationsList = `${urlSearch}/operations`;
 const urlMetadata = `${baseURL}/meta-data`;
 const urlVisualizePdf = `${baseURL}/transform/visualize-pdf`;
+const urlVisualizeCapi = `${baseURL}/transform/visualize-capi`;
 const urlVisualizeSpec = `${baseURL}/transform/visualize-spec`;
 const urlVisualizeDDI = `${baseURL}/transform/visualize-ddi`;
 
@@ -57,6 +58,26 @@ function openDocument(data) {
  */
 export const visualizeHtml = qr => {
   fetch(`${visualisationUrl}/${qr.DataCollection[0].id}/${qr.Name}`, {
+    method: 'POST',
+    headers: {
+      // Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(qr),
+    credentials: 'include'
+  })
+    .then(response => response.text())
+    .then(url => {
+      const a = document.createElement('a');
+      a.href = url;
+      a.setAttribute('target', '_blank');
+      document.body.appendChild(a);
+      a.click();
+    });
+};
+
+export const visualizeCapi = qr => {
+  fetch(`${urlVisualizeCapi}/${qr.DataCollection[0].id}/${qr.Name}`, {
     method: 'POST',
     headers: {
       // Accept: 'application/json',

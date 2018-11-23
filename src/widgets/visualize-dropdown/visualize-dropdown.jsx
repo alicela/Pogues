@@ -114,6 +114,12 @@ class VisualizeDropdown extends Component {
             </a>
           </li>
           <li>
+            <a href="#" onClick={e => this.visualize(e, 'capi')}>
+              {' '}
+              {Dictionary.VISUALIZE_CAPI}{' '}
+            </a>
+          </li>
+          <li>
             <a href="#" onClick={e => this.visualize(e, 'pdf')}>
               {Dictionary.VISUALIZE_PDF}
             </a>

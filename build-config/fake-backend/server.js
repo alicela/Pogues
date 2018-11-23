@@ -174,6 +174,14 @@ server.post(
     res.end('http://google.fr');
   }
 );
+
+server.post(
+  '/transform/visualize-capi/:dataCollection/:questionnaire',
+  (req, res, next) => {
+    res.end('https://pogues-vis.dev.innovation.insee.eu/questionnaire/simpsons');
+  }
+);
+
 server.post('/transform/visualize-pdf', (req, res, next) => {
   const filename = __dirname + '/test.pdf';
   const data = fs.readFileSync(filename);

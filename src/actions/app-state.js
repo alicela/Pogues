@@ -4,6 +4,7 @@ import {
   visualizeSpec,
   visualizePdf,
   visualizeHtml,
+  visualizeCapi,
   visualizeDDI
 } from 'utils/remote-api';
 import { questionnaireRemoteToStores } from 'model/remote-to-stores';
@@ -365,6 +366,8 @@ export const visualizeActiveQuestionnaire = (type, componentId) => {
       visualizeHtml(questionnaireModel);
     } else if (type === 'ddi') {
       visualizeDDI(questionnaireModel);
+    } else if (type === 'capi') {
+      visualizeCapi(questionnaireModel);
     }
   };
 };

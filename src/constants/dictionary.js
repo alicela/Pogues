@@ -1222,6 +1222,10 @@ const dictionary = {
     fr: 'Web',
     en: 'Web'
   },
+  VISUALIZE_CAPI: {
+    fr: 'Capi',
+    en: 'Capi'
+  },
   VISUALIZE_PDF: {
     fr: 'PDF',
     en: 'PDF'
